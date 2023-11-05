@@ -1,0 +1,440 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Carousel 02</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/style2.css'%}" />
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css'%}" />
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/LineIcons.css'%}" />
+      <!-- Google Font: Source Sans Pro -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Tempusdominus Bootstrap 4 -->
+      <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'%}">
+      <!-- iCheck -->
+      <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+      <!-- JQVMap -->
+      <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css'%}">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'%}">
+      <!-- overlayScrollbars -->
+      <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css'%}">
+      <!-- Daterange picker -->
+      <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css'%}">
+      <!-- summernote -->
+      <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css'%}">
+    <style type="text/css">
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+  </style>
+  <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'%}">
+ 
+    <!--====== Material Design Icons CSS ======-->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/materialdesignicons.min.css'%}"
+    />
+
+    <!--====== Jquery Ui CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css'%}" />
+  </head>
+  <style type="text/css">
+    .content-card-style-4 .single-content .content-icon i {
+      font-size: 72px;
+      line-height: 72px;
+      color: #393d8e;
+    }
+    .title a {
+      color: black !important;
+    }
+    body {
+      background-color: hsl(0, 0%, 98%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: hsl(0, 0%, 30%);
+    }
+
+    .box-element {
+      box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 10px;
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 200px;
+      -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+      -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+      box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    }
+
+    .product {
+      border-radius: 0 0 4px 4px;
+    }
+
+    .bg-dark {
+      background-color: #4f868c !important;
+    }
+
+    #cart-icon {
+      width: 25px;
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    #cart-total {
+      display: block;
+      text-align: center;
+      color: #fff;
+      background-color: red;
+      width: 20px;
+      height: 25px;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+
+    .col-lg-4,
+    .col-lg-6,
+    .col-lg-8,
+    .col-lg-12 {
+      margin-top: 10px;
+    }
+
+    .btn {
+      border-radius: 0;
+    }
+
+    .row-image {
+      width: 100px;
+    }
+
+    .form-field {
+      width: 250px;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .cart-row {
+      display: flex;
+      align-items: flex-stretch;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .quantity {
+      display: inline-block;
+      font-weight: 700;
+      padding-right: 10px;
+    }
+
+    .chg-quantity {
+      width: 12px;
+      cursor: pointer;
+      display: block;
+      margin-top: 5px;
+      transition: 0.1s;
+    }
+
+    .chg-quantity:hover {
+      opacity: 0.6;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+  <body>
+    {% block content %}
+    
+    
+    {% endblock content %}
+    <script>
+      var user = "{{request.user}}";
+
+      function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          var cookies = document.cookie.split(";");
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      var csrftoken = getToken("csrftoken");
+      function getCookie(name) {
+        // Split cookie string and get all individual name=value pairs in an array
+        var cookieArr = document.cookie.split(";");
+
+        // Loop through the array elements
+        for (var i = 0; i < cookieArr.length; i++) {
+          var cookiePair = cookieArr[i].split("=");
+
+          /* Removing whitespace at the beginning of the cookie name
+					and compare it with the given string */
+          if (name == cookiePair[0].trim()) {
+            // Decode the cookie value and return
+            return decodeURIComponent(cookiePair[1]);
+          }
+        }
+
+        // Return null if not found
+        return null;
+      }
+
+    
+    var cartc = JSON.parse(getCookie("cartc"));
+
+    function checkuserout(user){
+      if(user == 'AnonymousUser'){
+        return
+      }else{
+      cartc = {}
+      document.cookie ='cartc=' + JSON.stringify(cartc)+ ";domain=;path=/"
+   
+    }
+  }
+    checkuserout(user)
+
+  
+    </script>
+
+    
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/all.js'%}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <!-- Chart -->
+  <!-- Sparkline -->
+    <script src="{% static 'plugins/sparklines/sparkline.js'%}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'plugins/jqvmap/jquery.vmap.min.js'%}"></script>
+    <script src="{% static 'plugins/jqvmap/maps/jquery.vmap.usa.js'%}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{% static 'plugins/jquery-knob/jquery.knob.min.js'%}"></script>
+    <!-- daterangepicker -->
+    <script src="{% static 'plugins/moment/moment.min.js'%}"></script>
+    <script src="{% static 'plugins/daterangepicker/daterangepicker.js'%}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+    <!-- Summernote -->
+    <script src="{% static 'plugins/summernote/summernote-bs4.min.js'%}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'%}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'dist/js/adminlte.js'%}"></script>
+    <script src="{% static 'plugins/chart.js/Chart.min.js'%}"></script>
+  
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'dist/js/demo.js'%}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'dist/js/pages/dashboard2.js'%}"></script>
+    <script src="{% static 'plugins/sweetalert2/sweetalert2.min.js'%}"></script>
+    <script src="{% static 'plugins/toastr/toastr.min.js'%}"></script>
+    <script type="text/javascript">
+      $(function() {
+        var Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+    
+        $('.swalDefaultSuccess').click(function() {
+          Toast.fire({
+            icon: 'success',
+            title: 'Successfully added item'
+          })
+        });
+        $('.swalDefaultSuccess2').click(function() {
+          Toast.fire({
+            icon: 'success',
+            title: 'successfully deleted item'
+          })
+        });
+        $('.swalDefaultInfo').click(function() {
+          Toast.fire({
+            icon: 'info',
+            title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.swalDefaultError').click(function() {
+          Toast.fire({
+            icon: 'error',
+            title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.swalDefaultWarning').click(function() {
+          Toast.fire({
+            icon: 'warning',
+            title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.swalDefaultQuestion').click(function() {
+          Toast.fire({
+            icon: 'question',
+            title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+    
+        $('.toastrDefaultSuccess').click(function() {
+          toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultInfo').click(function() {
+          toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultError').click(function() {
+          toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultWarning').click(function() {
+          toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+    
+        $('.toastsDefaultDefault').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultTopLeft').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            position: 'topLeft',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultBottomRight').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            position: 'bottomRight',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultBottomLeft').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            position: 'bottomLeft',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultAutohide').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            autohide: true,
+            delay: 750,
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultNotFixed').click(function() {
+          $(document).Toasts('create', {
+            title: 'Toast Title',
+            fixed: false,
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultFull').click(function() {
+          $(document).Toasts('create', {
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            icon: 'fas fa-envelope fa-lg',
+          })
+        });
+        $('.toastsDefaultFullImage').click(function() {
+          $(document).Toasts('create', {
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            image: '../../dist/img/user3-128x128.jpg',
+            imageAlt: 'User Picture',
+          })
+        });
+        $('.toastsDefaultSuccess').click(function() {
+          $(document).Toasts('create', {
+            class: 'bg-success',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultInfo').click(function() {
+          $(document).Toasts('create', {
+            class: 'bg-info',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultWarning').click(function() {
+          $(document).Toasts('create', {
+            class: 'bg-warning',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultDanger').click(function() {
+          $(document).Toasts('create', {
+            class: 'bg-danger',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+        $('.toastsDefaultMaroon').click(function() {
+          $(document).Toasts('create', {
+            class: 'bg-maroon',
+            title: 'Toast Title',
+            subtitle: 'Subtitle',
+            body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+          })
+        });
+      });
+  
+
+    </script>
+  </body>
+
+</html>

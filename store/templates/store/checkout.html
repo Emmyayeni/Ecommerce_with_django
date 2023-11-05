@@ -1,0 +1,69 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %} 
+    {% include 'snippets/nav.html' %}
+	<div class="container pt-50 my-5">
+		 <div class="row">
+			<div class="col-lg-6">
+				<div class="box-element" id="form-wrapper">
+					{% if shipping == False %}
+					<form id="form">
+						<div id="shipping-info">
+							<p>Shipping Information:</p>
+							<hr>
+							<div class="form-field">
+								<input class="form-control" type="text" name="address" placeholder="Address..">
+							</div>
+							<div class="form-field">
+								<input class="form-control" type="text" name="city" placeholder="City..">
+							</div>
+							<div class="form-field">
+								<input class="form-control" type="text" name="state" placeholder="State..">
+							</div>
+							<div class="form-field">
+								<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+							</div>
+							<div class="form-field">
+								<input class="form-control" type="text" name="country" placeholder="Zip code..">
+							</div>
+						</div>
+	
+						<hr>
+						<input id="form-button" class="btn btn-primary btn-block" type="submit" value="Continue">
+					</form>
+					{% else %}
+					<p> your shipping {{shipping}} info will be added shortly to the webapp</p>
+					{% endif %}
+				</div>
+	
+				<br>
+				<div class="box-element hidden" id="payment-info">
+					<small>Paypal Options</small>
+					<!--<button id="make-payment">Make payment</button>-->
+					<div id="paypal-button-container"></div>
+				</div>
+				
+			</div>
+	
+			<div class="col-lg-6">
+				<div class="box-element">
+					<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+					<hr>
+					<h3>Order Summary</h3>
+					<hr>
+					{% for cart in items %}
+					<div class="cart-row">
+						<div style="flex:2"><img class="row-image" src="{{cart.product.imageURL}}"></div>
+						<div style="flex:2"><p>{{cart.product.name}}</div>
+						<div style="flex:1"><p>${{cart.product.price}}</p></div>
+						<div style="flex:1"><p>x{{cart.quantity}}</p></div>
+					</div>
+					{% endfor %}
+					<h5>Items: {{order.get_cart_items}}</h5>
+					<h5>Total: ${{order.get_cart_total}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>	
+    {% include 'snippets/footer.html' %}
+{% endblock content %}
