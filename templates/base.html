@@ -222,6 +222,13 @@
 
     
     var cartc = JSON.parse(getCookie("cartc"));
+    if(cartc == undefined){
+      cartc  = {}
+      console.log('Cart Created!', cartc)
+      document.cookie = 'cartc=' + JSON.stringify(cartc) + ";domain=;path=/"
+    } 
+    console.log('Cartc:',cartc)
+    var cartc = JSON.parse(getCookie('cartc'))
 
     function checkuserout(user){
       if(user == 'AnonymousUser'){
