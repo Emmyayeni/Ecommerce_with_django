@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 
 import os
 
+=======
+import os 
+>>>>>>> ab854881d1ba5f94a694dc800859cc73bee80de9
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,14 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@^1y(ftjk=tf-w%95b7$hu=ov$35kf)c&dcuarv*7lwzegw9bv'
-
+SECRET_KEY = SECRET_KEY = 'django-insecure-@^1y(ftjk=tf-w%95b7$hu=ov$35kf)c&dcuarv*7lwzegw9bv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = "account.Account"
 
 # Application definition
@@ -144,6 +147,13 @@ TEMPLATES_CONTEXT_PROCESSORS =(
     "django.core.context_processors.media",
     "django.core.context_processors.request",
 )
+<<<<<<< HEAD
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+>>>>>>> ab854881d1ba5f94a694dc800859cc73bee80de9
