@@ -128,11 +128,10 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-<<<<<<< HEAD
+
 MEDIA_ROOT = BASE_DIR /'static/images/image'
-=======
+
 MEDIA_ROOT = BASE_DIR / 'staticfiles/assets/images/image'
->>>>>>> 5f7435dc69d8610f329076397b1ded767e5ac746
 
 MEDIA_URL = '/images/image/'
 # Default primary key field type
@@ -150,8 +149,6 @@ TEMPLATES_CONTEXT_PROCESSORS =(
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-<<<<<<< HEAD
-=======
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
->>>>>>> 5f7435dc69d8610f329076397b1ded767e5ac746
+
