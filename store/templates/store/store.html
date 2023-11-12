@@ -13,7 +13,7 @@
           <h6><strong>{{product.name}}</strong></h6>
           <hr>
     
-          <button data-product="{{product.id}}" data-action="add" class="btn btn-primary add-btn update-cart"><img src="{% static 'cart-7.png'%}">Add to Cart</button>
+          <button data-product="{{product.id}}" data-action="add" class="btn btn-primary add-btn update-cart"><i class="fas fa-cart-plus fa-lg mr-2"></i> Add to Cart</button>
           
           <a class="btn btn-success" href="{% url 'single_view' pk=product.id %}">View</a>
           <h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
