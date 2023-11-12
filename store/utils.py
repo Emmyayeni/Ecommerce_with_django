@@ -75,9 +75,9 @@ def guestOrder(request, user):
                 quantity=(item['quantity'] if item['quantity']>0 else -1*item['quantity']), # negative quantity = freebies
             )
         orderItem.quantity = (orderItem.quantity + item['quantity'])
-
+        orderItem.save()
     order.save()
-    orderItem.save()
+    
     # request.COOKIES['cartc'].delete()
     return user
 

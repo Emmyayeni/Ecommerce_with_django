@@ -47,7 +47,7 @@ class Register(View):
         return render(request,'account/snippets/register.html',{'form':self.form})
 
     def post(self,request):
-        form = self.form(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email').lower()
