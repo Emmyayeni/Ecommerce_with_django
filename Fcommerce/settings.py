@@ -11,13 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< HEAD
 
 import os
 
-=======
-import os 
->>>>>>> ab854881d1ba5f94a694dc800859cc73bee80de9
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -132,9 +128,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-MEDIA_ROOT = BASE_DIR / 'static/assets/images/image'
+MEDIA_ROOT = BASE_DIR / 'static/images/image'
 
-MEDIA_URL = '/assets/images/image/'
+MEDIA_URL = '/images/image/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -147,13 +143,6 @@ TEMPLATES_CONTEXT_PROCESSORS =(
     "django.core.context_processors.media",
     "django.core.context_processors.request",
 )
-<<<<<<< HEAD
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-=======
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
->>>>>>> ab854881d1ba5f94a694dc800859cc73bee80de9
