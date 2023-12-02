@@ -26,7 +26,7 @@ class Login(View):
             messages.error(request, 'User does not exist')
         user = authenticate(request, email=email, password=password)
         if user is not None:
-            user = guestOrder(request,user)
+            guestOrder(request,user)
             login(request, user)
             return redirect('home')
         else:
@@ -53,8 +53,8 @@ class Register(View):
             email = form.cleaned_data.get('email').lower()
             raw_password = form.cleaned_data.get('password1')
             account = authenticate(email=email,password=raw_password)
-            usern = guestOrder(request,account)
-            login(request, usern)
+            guestOrder(request,account)
+            login(request, account)
             customer = Customer.objects.create(user=account)
             customer.save()
             return redirect('home')
